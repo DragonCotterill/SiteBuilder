@@ -2,20 +2,20 @@
 A simple static page generator. Give it a template and a series of Markdown text files and it'll produce a full website.
 
 ## Usage:
-* sitebuilder.sh [-b <templatename>] [-c <dir>] [-p <dir>] [-r <path>] [-t <dir>] [-w <dir>]
+* sitebuilder.sh [-b &lt;templatename&gt;] [-c &lt;dir&gt;] [-p &lt;dir&gt;] [-r &lt;path&gt;] [-t &lt;dir&gt;] [-w &lt;dir&gt;]
 * sitebuilder.sh -h
 
 ## Options:
-*  -b <templatename> The base template name to use (default "template.html")
-*  -c <dir>	Content Directory (Default "Content")
+*  -b &lt;templatename&gt; The base template name to use (default "template.html")
+*  -c &lt;dir&gt;	Content Directory (Default "Content")
 *  -d		Print the full documentation
 *  -f   FORCE update of all documents (Deletes all previous documents)
 *  -g   Load a config file. (Default none)
 *  -o   Offset directory - used to put everything into a sub-directory (Default "/")
-*  -p <dir>	Public Directory (Default "Public")
-*  -r <path>	Path to root of site. Default is to use the current directory.
-*  -t <dir>	Templates directory (Default "Templates")
-*  -w <dir>	Web directory (Default "www")
+*  -p &lt;dir&gt;	Public Directory (Default "Public")
+*  -r &lt;path&gt;	Path to root of site. Default is to use the current directory.
+*  -t &lt;dir&gt;	Templates directory (Default "Templates")
+*  -w &lt;dir&gt;	Web directory (Default "www")
 *  -v		VERBOSE. List all processing and messages
 *  -h		Show help
 
@@ -70,7 +70,7 @@ To use a variable within a template, simply enclose it within double curly brace
 
 There is also an optional way of using variables in case they have NOT been defined, or the value is nothing (""). Use {{Title|Some title}} to use "Some title" should one not be defined.
 
-There is also an inclusion value that if a variable HAS been defined, and is not empty ("") then replace it with something else. Use {{Tags>These tags have been defined {{Tags}}}} so that if the "Tags" variable has been defined replace it with some extra text.
+There is also an inclusion value that if a variable HAS been defined, and is not empty ("") then replace it with something else. Use {{Tags&gt;These tags have been defined {{Tags}}}} so that if the "Tags" variable has been defined replace it with some extra text.
 
 NB. Variable names are case-sensitive. Do not use { or } values as standalone values within the replacements. The results would be unpredictable.
 
@@ -88,7 +88,7 @@ There are a number of variables which are computed automatically based on the di
 
 {{BreadCrumbs}} - A directory list to the current working file.
 
-{{Include|&lt;filename&gt;}} - which will include <filename> from the Templates directory. In this way you can also include additional shared elements based on defined variables.
+{{Include|&lt;filename&gt;}} - which will include &lt;filename&gt; from the Templates directory. In this way you can also include additional shared elements based on defined variables.
 
 {{Digest}} or {{DigestReverse}} - This will go through all of the entries in the current directory and use the variable values of "@Digest" as entries. If this is added to the Index entry then all other files could have a single line which will be included in the output. {{Digest}} sorts alphabetically, {{DigestReverse}} sorts in reverse order. If a file does not have a @Digest value then it simply won't be included. This is only computed at run-time. If you add a new file, then you'll also need to update the file containing the {{Digest}} command for it to be included.
 
@@ -109,7 +109,7 @@ DO NOT do this:
 
 Do this instead:
   @NavNext &lt;a href="{{NavigateNext}}"&gt;&lt;span class="next"&gt;{{NavigateNextName}}&lt;/span&gt;&lt;/a&gt;
-  {{NavigateNext>{{NavNext}}}}
+  {{NavigateNext&gt;{{NavNext}}}}
 
 In this way, if a NavigateNext (or NavigatePrevious) value is detected then the relevant value would be included. If the NavigatePrevious value is blank, then the whole inclusion value would be skipped. If you need to include multiple replacement values, then create intermediate variables instead.
 
