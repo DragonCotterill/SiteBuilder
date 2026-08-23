@@ -52,11 +52,11 @@ Files may be preceeded by a number followed by a dot eg. 1.First Page.txt, 2.Sec
 
 An example file can be as simple as:
 
-  @Template OtherTemplate.html
-  @Title Example Title
-  @Tags This, That, The Other
-  @Body
-  Here is the main content of the page.
+>  @Template OtherTemplate.html
+>  @Title Example Title
+>  @Tags This, That, The Other
+>  @Body
+>  Here is the main content of the page.
 
 
 A variable is declared with an at "@" at the start of the line. Everything after the first space is considered as the various content upto another @ entry or the end of the file. Variables are usually case sensitive, so it's best to be consistent in how they are defined.
