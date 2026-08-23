@@ -90,11 +90,11 @@ There are a number of variables which are computed automatically based on the di
 
 {{BreadCrumbs}} - A directory list to the current working file.
 
-{{Include|<filename>}} - which will include <filename> from the Templates directory. In this way you can also include additional shared elements based on defined variables.
+{{Include|&lt;filename&gt;}} - which will include <filename> from the Templates directory. In this way you can also include additional shared elements based on defined variables.
 
 {{Digest}} or {{DigestReverse}} - This will go through all of the entries in the current directory and use the variable values of "@Digest" as entries. If this is added to the Index entry then all other files could have a single line which will be included in the output. {{Digest}} sorts alphabetically, {{DigestReverse}} sorts in reverse order. If a file does not have a @Digest value then it simply won't be included. This is only computed at run-time. If you add a new file, then you'll also need to update the file containing the {{Digest}} command for it to be included.
 
-In addition, each top level <ul> entry is given the ID PrimaryNavigation, SecondayNavigation and Navigation as appropriate.
+In addition, each top level &lt;ul&gt; entry is given the ID PrimaryNavigation, SecondayNavigation and Navigation as appropriate.
 
 ## Reserved Non-list variables:
 
@@ -107,10 +107,10 @@ In addition, each top level <ul> entry is given the ID PrimaryNavigation, Second
 NB. Do NOT embed multiple variable replacements inside other variables.
 
 DO NOT do this:
-  {{NavigateNext><a href="{{NavigateNext}}"><span class="next">{{NavigateNextName}}</span></a>}}
+  {{NavigateNext&gt;&lt;a href="{{NavigateNext}}"&gt;&lt;span class="next"&gt;{{NavigateNextName}}&lt;/span&gt;&lt;/a&gt;}}
 
 Do this instead:
-  @NavNext <a href="{{NavigateNext}}"><span class="next">{{NavigateNextName}}</span></a>
+  @NavNext &lt;a href="{{NavigateNext}}"&gt;&lt;span class="next"&gt;{{NavigateNextName}}&lt;/span&gt;&lt;/a&gt;
   {{NavigateNext>{{NavNext}}}}
 
 In this way, if a NavigateNext (or NavigatePrevious) value is detected then the relevant value would be included. If the NavigatePrevious value is blank, then the whole inclusion value would be skipped. If you need to include multiple replacement values, then create intermediate variables instead.
